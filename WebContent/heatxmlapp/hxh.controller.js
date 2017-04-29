@@ -12,7 +12,7 @@ sap.ui.controller("heatxmlapp.hxh", {
         var oData = {
             "results": [{
                 "Country": "Italy",
-                "Penetration": "0.12"
+                "Penetration": "0.80"
             }, {
                 "Country": "USA",
                 "Penetration": "0.68"
@@ -103,12 +103,14 @@ sap.ui.controller("heatxmlapp.hxh", {
         
         var scales = [{
      				'feed': 'color',
-            'numOfSegments': 4,
+            'numOfSegments': 6,
             'legendValues': [0,0.2,0.4,0.6,0.8,1],
             "palette": ["sapUiChartPaletteSequentialHue2Light3", 			
             						"sapUiChartPaletteSequentialHue2Light1", 
                         "sapUiChartPaletteSequentialHue2",
-                        "sapUiChartPaletteSequentialHue2Dark2"]
+                        "sapUiChartPaletteSequentialHue2Dark2",
+                        "sapUiChartPaletteSequentialHue3Dark2",
+                        "sapUiChartPaletteSequentialNeutral"]
 				}];
 				oVizFrame.setVizScales(scales);
         
