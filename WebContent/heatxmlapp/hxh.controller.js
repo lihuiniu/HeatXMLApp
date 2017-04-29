@@ -98,7 +98,7 @@ sap.ui.controller("heatxmlapp.hxh", {
         var scales = [{
      				'feed': 'color',
             'numOfSegments': 4,
-            'legendValues': [0,0.25,0.50,0.75,1],
+            'legendValues': [0,0.2,0.4,0.6,0.8,1],
             "palette": ["sapUiChartPaletteSequentialHue2Light3", 			
             						"sapUiChartPaletteSequentialHue2Light1", 
                         "sapUiChartPaletteSequentialHue2",
