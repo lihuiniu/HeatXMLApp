@@ -20,6 +20,12 @@ sap.ui.controller("heatxmlapp.hxh", {
                 "Country": "Portugal",
                 "Penetration": "0.48"
             }, {
+            	"Country": "China",
+            	"Penetration": "0.19"
+            },{
+            	"Country": "Japan",
+            	"Penetration": "0.25"
+            }, {
                 "Country": "Spain",
                 "Penetration": "0.97"
             }, {
