@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+	<title>test</title>
+
+<script id='sap-ui-bootstrap' type='text/javascript'
+    src='/sapui5/resources/sap-ui-core.js'
+        data-sap-ui-theme='sap_goldreflection'
+        data-sap-ui-libs='sap.ui.commons,sap.ui.ux3,sap.ui.table,sap.viz'></script>
+		<!-- add 'sap.ui.table' and/or other libraries if required -->
+	<script>
+		var data = {
+				"accounts": [
+				{
+					"Date": "Monday",
+					"Country": "SD7",
+					"Protocol": "HTTP",
+					"Accounts": "10000"
+				},
+				{
+					"Date": "Monday",
+					"Country": "SD7",
+					"Protocol": "RFC",
+					"Accounts": "20000"
+				}, 
+				{
+					"Date": "Monday",
+					"Country": "FA7",
+					"Protocol": "HTTP",
+					"Accounts": "30000"
+				}, 
+					{
+					"Date": "Monday",
+					"Country": "FA7",
+					"Protocol": "RFC",
+					"Accounts": "10000"
+				},
+				{
+					"Date": "Monday",
+					"Country": "Korea",
+					"Protocol": "HTTP",
+					"Accounts": "40000"
+				}, 
+				{
+					"Date": "Monday",
+					"Country": "Singapore",
+					"Protocol": "HTTP",
+					"Accounts": "50000"
+				}, 
+				{
+					"Date": "Monday",
+					"Country": "Malaysia",
+					"Protocol": "HTTP",
+					"Accounts": "60000"
+				},
+					{
+					"Date": "Tuesday",
+					"Country": "SD7",
+					"Protocol": "HTTP",
+					"Accounts": "10000"
+				},
+				{
+					"Date": "Tuesday",
+					"Country": "SD7",
+					"Protocol": "RFC",
+					"Accounts": "40000"
+				}, 
+				{
+					"Date": "Tuesday",
+					"Country": "FA7",
+					"Protocol": "HTTP",
+					"Accounts": "60000"
+				}, 
+					{
+					"Date": "Tuesday",
+					"Country": "FA7",
+					"Protocol": "RFC",
+					"Accounts": "10000"
+				},
+				{
+					"Date": "Tuesday",
+					"Country": "Korea",
+					"Protocol": "HTTP",
+					"Accounts": "50000"
+				}, 
+				{
+					"Date": "Tuesday",
+					"Country": "Singapore",
+					"Protocol": "HTTP",
+					"Accounts": "10000"
+				}, 
+				{
+					"Date": "Tuesday",
+					"Country": "Malaysia",
+					"Protocol": "HTTP",
+					"Accounts": "5000"
+				},
+										{
+					"Date": "Sunday",
+					"Country": "SD7",
+					"Protocol": "HTTP",
+					"Accounts": "10000"
+				},
+				{
+					"Date": "Sunday",
+					"Country": "SD7",
+					"Protocol": "RFC",
+					"Accounts": "20000"
+				}, 
+				{
+					"Date": "Sunday",
+					"Country": "FA7",
+					"Protocol": "HTTP",
+					"Accounts": "30000"
+				}, 
+					{
+					"Date": "Sunday",
+					"Country": "FA7",
+					"Protocol": "RFC",
+					"Accounts": "10000"
+				},
+				{
+					"Date": "Sunday",
+					"Country": "Korea",
+					"Protocol": "HTTP",
+					"Accounts": "40000"
+				}, 
+				{
+					"Date": "Sunday",
+					"Country": "Singapore",
+					"Protocol": "HTTP",
+					"Accounts": "50000"
+				}, 
+				{
+					"Date": "Sunday",
+					"Country": "Malaysia",
+					"Protocol": "HTTP",
+					"Accounts": "60000"
+				}
+				]
+		};
+		var oModel = new sap.ui.model.json.JSONModel();
+		oModel.setData(data);
+		
+			
+			
+		var dataset = new sap.viz.core.FlattenedDataset({
+			  dimensions : [{
+			  axis : 2,
+			  name : 'SID',
+			  value : "{Country}"
+			  },{
+			  axis : 2,
+			  name : 'Protocol',
+			  value : "{Protocol}"
+			  },{
+			  axis : 1,
+			  name : 'Date',
+			  value : "{Date}"
+			  }],
+			  measures : [{
+				  axis:2,
+			  name : 'Accounts',
+				  value : '{Accounts}'
+			  }],
+			  data : {path : "/accounts"}
+		  });
+		dataset.setModel(oModel);
+		
+		var bullet = new sap.viz.ui5.Heatmap({width: "100%"});
+		bullet.setDataset(dataset);
+		bullet.placeAt('content');
+	</script>
+
+</head>
+<body class='sapUiBody'>
+	<div id='content'></div>
+</body>
+</html>
